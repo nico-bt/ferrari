@@ -43,7 +43,7 @@ h5 {
 }
 
 h1 {
-  background: -webkit-linear-gradient(0deg, #ffffff, #00d5ff, #005662, #93b7be);
+  background: -webkit-linear-gradient(0deg, #ffffff, #00d5ff, #199cae, #00d5ff, #edfbff);
   /* background: -webkit-linear-gradient(0deg, red, orange, #fff200, orange, red); */
   background-size: auto;
   background-clip: border-box;
@@ -144,7 +144,7 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background: linear-gradient(darkred, red);
+  background: linear-gradient(darkred, red, orange);
   font-size: 3.5rem;
   letter-spacing: 3px;
   font-weight: bolder;
