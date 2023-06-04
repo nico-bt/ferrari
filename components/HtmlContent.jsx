@@ -46,7 +46,7 @@ function HtmlContent({ setShowBuy }) {
         </div>
       </div>
 
-      <div className="row" style={{ top: `618vh` }}>
+      <div className="row" style={{ top: `612vh` }}>
         <div className="col right">
           <h2>Craftsmanship and Technology</h2>
           <p>
