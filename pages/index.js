@@ -32,8 +32,8 @@ export default function Home() {
 
           <Environment
             background // can be true, false or "only" (which only sets the background) (default: false)
-            // preset="warehouse"
-            files={import("@pmndrs/assets/hdri/warehouse")}
+            preset="warehouse"
+            // files={import("@pmndrs/assets/hdri/warehouse")}
           />
 
           {!showBuy && (
