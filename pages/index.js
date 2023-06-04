@@ -11,7 +11,6 @@ import { useState } from "react"
 import { Environment, Scroll, ScrollControls } from "@react-three/drei"
 import HtmlContent from "@/components/HtmlContent"
 import useModelScale from "@/hooks/useModelScale"
-// import warehouse from "@pmndrs/assets/hdri"
 
 export default function Home() {
   const [showBuy, setShowBuy] = useState(false)
@@ -29,14 +28,13 @@ export default function Home() {
       <Canvas>
         <ScrollControls pages={showBuy ? 1 : 8} damping={0.1}>
           {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
+          <ambientLight />
 
-          {/* <Environment
+          <Environment
             background // can be true, false or "only" (which only sets the background) (default: false)
             // preset="warehouse"
             files={import("@pmndrs/assets/hdri/warehouse")}
-          /> */}
+          />
 
           {!showBuy && (
             <>
