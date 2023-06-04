@@ -32,11 +32,11 @@ export default function Home() {
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} />
 
-          <Environment
+          {/* <Environment
             background // can be true, false or "only" (which only sets the background) (default: false)
             // preset="warehouse"
             files={import("@pmndrs/assets/hdri/warehouse")}
-          />
+          /> */}
 
           {!showBuy && (
             <>
