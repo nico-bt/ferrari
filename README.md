@@ -8,4 +8,4 @@ Using:
 -  Drei
 -  GSAP
 
-## [Live](https://ferrari-nico-bt.vercel.app/)
+## [Live project here](https://ferrari-nico-bt.vercel.app/)
