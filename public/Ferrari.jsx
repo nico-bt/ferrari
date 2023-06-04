@@ -7,18 +7,67 @@ Source: https://sketchfab.com/3d-models/ferrari-550-barchetta-2000-azzurro-hyper
 Title: Ferrari 550 Barchetta 2000 Azzurro Hyperion
 */
 
-import React, { useRef } from "react"
-import { useGLTF } from "@react-three/drei"
+import { useLayoutEffect, useRef } from "react"
+import { useGLTF, useScroll } from "@react-three/drei"
+import gsap from "gsap"
 import { useFrame } from "@react-three/fiber"
 
 export function Model(props) {
   const { nodes, materials } = useGLTF("/ferrari-transformed.glb")
+  const { animationRotate } = props
 
-  const mesh = useRef()
-  useFrame((state, delta) => (mesh.current.rotation.y += delta / 3))
+  const carRef = useRef()
+  const scroll = useScroll()
+  const tl = useRef()
+
+  useFrame((state, delta) => {
+    if (!animationRotate) {
+      tl.current.seek(scroll.offset * tl.current.duration())
+    } else {
+      carRef.current.rotation.y += delta / 3
+    }
+  })
+
+  useLayoutEffect(() => {
+    tl.current = gsap.timeline({ defaults: { duration: 2, ease: "power1.inOut" } })
+    if (!animationRotate) {
+      tl.current
+        .to(carRef.current.rotation, { y: -1 }, 1)
+        .to(carRef.current.position, { x: 1 }, 1)
+        .to(carRef.current.position, { z: 2 }, 1)
+
+        .to(carRef.current.rotation, { y: -1.5 }, 4)
+        .to(carRef.current.position, { x: 2.5 }, 4)
+        .to(carRef.current.position, { z: 0 }, 4)
+
+        .to(carRef.current.rotation, { y: -1.5 }, 6)
+        .to(carRef.current.position, { x: -1.5 }, 6)
+        .to(carRef.current.position, { z: 1 }, 6)
+
+        .to(carRef.current.rotation, { y: 1 }, 9)
+        .to(carRef.current.position, { x: -2.5 }, 9)
+        .to(carRef.current.position, { z: 1 }, 9)
+
+        .to(carRef.current.rotation, { y: 1.5 }, 12)
+        .to(carRef.current.rotation, { x: 0.35 }, 12)
+        .to(carRef.current.position, { x: 1 }, 12)
+
+        .to(carRef.current.position, { x: -0.8 }, 16)
+        .to(carRef.current.rotation, { z: -0.1 }, 16)
+
+        .to(carRef.current.rotation, { z: 0 }, 20)
+        .to(carRef.current.rotation, { y: 0 }, 20)
+        .to(carRef.current.rotation, { x: 0.5 }, 20)
+        .to(carRef.current.position, { x: 0 }, 20)
+    } else {
+      tl.current
+        .to(carRef.current.rotation, { x: 0.3, y: 1.15, z: 0 }, 0)
+        .to(carRef.current.position, { x: 0, y: -0.25, z: 0 }, 0)
+    }
+  }, [])
 
   return (
-    <group {...props} dispose={null} ref={mesh}>
+    <group {...props} dispose={null} ref={carRef}>
       <mesh
         geometry={nodes.Object_2.geometry}
         material={materials["550bachetta"]}

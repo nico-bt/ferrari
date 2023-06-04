@@ -1,18 +1,227 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 html,
 body,
 #__next {
   height: 100vh;
   overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+  letter-spacing: 1.03px;
+  line-height: 1.2em;
+}
+
+h1 {
+  background: -webkit-linear-gradient(0deg, #ffffff, #00d5ff, #005662, #93b7be);
+  /* background: -webkit-linear-gradient(0deg, red, orange, #fff200, orange, red); */
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 100% !important;
+}
+.title {
+  color: #cdcbca;
+  position: absolute;
+  top: 64vh;
+  left: 50%;
+  font-size: 14rem;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 1130px) {
+  .title {
+    font-size: 10rem;
+  }
+}
+@media (max-width: 830px) {
+  .title {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 630px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h2 {
+  background: -webkit-linear-gradient(0deg, #cdcbca, aliceblue, #cdcbca, #2a3a3f);
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 100% !important;
+  font-size: 40px;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 2;
+}
+
+button {
+  background: transparent;
+  display: inline-block;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 3px;
+  line-height: 1.4em;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 3px;
+}
+
+.row {
+  width: 100%;
+  padding: 0 40px;
+  position: absolute;
+}
+
+.col {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  max-width: 500px;
+}
+.right {
+  right: 90px;
+}
+
+.btn-buy {
+  color: red;
+  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+button:hover {
+  background: linear-gradient(darkred, red);
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  font-weight: bolder;
+  color: black;
+  transition: all 0.5s;
+  box-shadow: 6px 8px 12px black;
+}
+
+.not-shipping {
+  color: red;
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.buy-now-tittle {
+  position: absolute;
+  font-size: 5rem;
+  letter-spacing: 3px;
+  background: -webkit-linear-gradient(0deg, orange, red, yellow);
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 100% !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 530px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  .col,
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 0;
+  }
+  p,
+  h2 {
+    padding-inline: 5%;
+  }
+  .buy-now-tittle {
+    font-size: 3rem;
+  }
+
+  .not-shipping {
+    font-size: 2.25rem;
+    padding: 25px 0;
+  }
+}
+
+.not-shippin-scroll-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }

@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@pmndrs/assets": "^0.0.0",
     "@react-three/drei": "^9.71.0",
     "@react-three/fiber": "^8.13.0",
     "@types/three": "^0.152.1",
+    "gsap": "^3.11.5",
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
