@@ -1,6 +1,6 @@
 ## Ferrari 3D Model Web
 
-Experimentig with 3D Models and Scrolling
+Experimenting with 3D Models and Scrolling
 
 Using:
 -  React
