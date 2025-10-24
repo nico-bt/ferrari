@@ -30,11 +30,7 @@ export default function Home() {
           {/* Canvas contents in here will *not* scroll, but receive useScroll! */}
           <ambientLight />
 
-          <Environment
-            background // can be true, false or "only" (which only sets the background) (default: false)
-            preset="warehouse"
-            // files={import("@pmndrs/assets/hdri/warehouse")}
-          />
+          <Environment background files={"/empty_warehouse_01_1k.hdr"} />
 
           {!showBuy && (
             <>
